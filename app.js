@@ -1,11 +1,12 @@
 require('dotenv').config()
 
-import express from 'express'
+/*import express from 'express'
 import mysql from 'mysql2'
-import bodyParser from 'body-parser'
-/*const express =  require('express');
+import bodyParser from 'body-parser'*/
+const express =  require('express');
 const mysql = require('mysql2');
-const bodyParser = require('body-parser');*/
+const bodyParser = require('body-parser');
+const path = require('Path')
 var app = express();
 
 var con = mysql.createConnection({
