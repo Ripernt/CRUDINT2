@@ -70,6 +70,7 @@ app.get('/obtenerCarro',(req,res)=>{
                             <td>${carros.precio_coche}</td>  
                             
                             </tr>`;
+            
 
 
         });
@@ -82,7 +83,8 @@ app.get('/obtenerCarro',(req,res)=>{
                     <th>Precio</th>
                 <tr>
                 ${carrosHTML}
-                </table>`
+                </table>
+                <button onclick="location.href='../public/index.html'">Salir</button>`
         );
 
 
