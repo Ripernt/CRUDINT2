@@ -13,7 +13,7 @@ var con = mysql.createConnection({
     user: process.env.DB_USER,//'ujuxzmolakxbdlt0',  //DB_USER, ujuxzmolakxbdlt0
     password: process.env.BD_PASSWORD,//'OXdfMT6ZJt8jZQk8jBLk', //DB_PASSWORD, OXdfMT6ZJt8jZQk8jBLk
     database: process.env.DB_NAME,//'buvmysjovxerblls4fap', //DB_NAME, buvmysjovxerblls4fap
-    port: process.env.DB_CONST
+    port: process.env.DB_POST
 })
 con.connect();
 
