@@ -50,7 +50,7 @@ app.post('/borrarCarro', (req,res)=>{
     });
     
 });
-//Update
+//
 //fun consultar
 
 
@@ -84,7 +84,7 @@ app.get('/obtenerCarro',(req,res)=>{
                 <tr>
                 ${carrosHTML}
                 </table>
-                <button onclick="location.href='../public/index.html'">Salir</button>`
+                <button onclick="location.href='/'">Salir</button>`
         );
 
 

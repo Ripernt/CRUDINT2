@@ -55,13 +55,14 @@
     </div>
     <a href="/obtenerCarro">Obtener Carros</a>
 
-    <form class="form" action="/agregarCarro" method="POST">
+    <form class="form" id="Vform"action="/agregarCarro" method="POST">
         <h3>Introducir coches</h3>
-        <p type="Nombre:"><input class="input" placeholder="Nombre del cochew" name="Carro"></input></p>
-        <p type="Modelo:"><input class="input" placeholder="Modelo del coche" name="Modelo"></input></p>
-        <p type="Precio:"><input class="input" placeholder="Precio del Coche" name="Precio"></input></p>
+        <p type="Nombre:"><input id="VNombre "class="input" placeholder="Nombre del cochew" name="Carro" size="50" maxlength="50" required></input></p>
+        <p type="Modelo:"><input id="VModelo" class="input" placeholder="Modelo del coche" name="Modelo" size="50" maxlength="50" required></input></p>
+        <p type="Precio:"><input id="VPrecio" class="input" placeholder="Precio del Coche" name="Precio" size="50" maxlength="50" required></input></p>
         
         <input id="registro" type="submit" value="Registrar Coche">
+        
       </form>
 
     <form class="form" action="/borrarCarro" method="POST">
@@ -69,6 +70,17 @@
         <p type="id:"><input class="input" placeholder="Id del coche" name="DCarro"></input></p>
         <input id="registro" type="submit" value="Borrar Coche">
     </form>
+
+    <form class="form" id="Vform"action="/actualizarCarro" method="GET">
+        <h3>Introducir coches</h3>
+        <p type="Nombre:"><input id="VId "class="input" placeholder="Id del coche" name="IdCarro" required></input></p>
+        <p type="Nombre:"><input id="VNombre "class="input" placeholder="Nombre del cochew" name="Carro" size="50" maxlength="50" required></input></p>
+        <p type="Modelo:"><input id="VModelo" class="input" placeholder="Modelo del coche" name="Modelo" size="50" maxlength="50" required></input></p>
+        <p type="Precio:"><input id="VPrecio" class="input" placeholder="Precio del Coche" name="Precio" size="50" maxlength="50" required></input></p>
+        
+        <input id="registro" type="submit" value="Actualizar Coche">
+        
+      </form>
 
     
 </body>
