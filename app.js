@@ -9,11 +9,11 @@ const bodyParser = require('body-parser');*/
 var app = express();
 
 var con = mysql.createConnection({
-    host: process.env.DB_HOST ,//'buvmysjovxerblls4fap-mysql.services.clever-cloud.com', //DB_HOST, buvmysjovxerblls4fap-mysql.services.clever-cloud.com
-    user: process.env.DB_USER,//'ujuxzmolakxbdlt0',  //DB_USER, ujuxzmolakxbdlt0
-    password: process.env.BD_PASSWORD,//'OXdfMT6ZJt8jZQk8jBLk', //DB_PASSWORD, OXdfMT6ZJt8jZQk8jBLk
-    database: process.env.DB_NAME,//'buvmysjovxerblls4fap', //DB_NAME, buvmysjovxerblls4fap
-    port: process.env.DB_POST
+    host: 'buvmysjovxerblls4fap-mysql.services.clever-cloud.com',//process.env.DB_HOST ,//'buvmysjovxerblls4fap-mysql.services.clever-cloud.com', //DB_HOST, buvmysjovxerblls4fap-mysql.services.clever-cloud.com
+    user: 'ujuxzmolakxbdlt0',//process.env.DB_USER,//'ujuxzmolakxbdlt0',  //DB_USER, ujuxzmolakxbdlt0
+    password: 'OXdfMT6ZJt8jZQk8jBLk',//process.env.BD_PASSWORD,//'OXdfMT6ZJt8jZQk8jBLk', //DB_PASSWORD, OXdfMT6ZJt8jZQk8jBLk
+    database: 'buvmysjovxerblls4fap',//process.env.DB_NAME,//'buvmysjovxerblls4fap', //DB_NAME, buvmysjovxerblls4fap
+    port: 3306//process.env.DB_POST
 })
 con.connect();
 
@@ -63,11 +63,11 @@ app.get('/obtenerCarro',(req,res)=>{
         respuesta.forEach(carros => {
             i++;
             carrosHTML+= `  <tr>
-                            <td>${i}</td>
+                            <td>${carros.id}</td>
                             <td>${carros.nombre_coche}</td>
                             <td>${carros.modelo_coche}</td>
                             <td>${carros.precio_coche}</td>  
-                            <td>${carros.id}</td>
+                            
                             </tr>`;
 
 
@@ -75,11 +75,10 @@ app.get('/obtenerCarro',(req,res)=>{
 
         return res.send(`<table border=1>
                 <tr>
-                    <th>Num</th>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Modelo</th>
                     <th>Precio</th>
-                    <th>ID</th>
                 <tr>
                 ${carrosHTML}
                 </table>`
