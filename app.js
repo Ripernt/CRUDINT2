@@ -14,7 +14,7 @@ var con = mysql.createConnection({
     user: process.env.DB_USER,//'ujuxzmolakxbdlt0',  //DB_USER, ujuxzmolakxbdlt0
     password: process.env.DB_PASSWORD,//'OXdfMT6ZJt8jZQk8jBLk', //DB_PASSWORD, OXdfMT6ZJt8jZQk8jBLk
     database: process.env.DB_NAME,//'buvmysjovxerblls4fap', //DB_NAME, buvmysjovxerblls4fap
-    port: process.env.DB_POST
+    port: process.env.DB_PORT
 })
 con.connect();
 
@@ -28,7 +28,7 @@ app.use(express.static('public'));
 
 app.post('/agregarCarro',(req,res)=>{
     let carro=req.body.Carro;
-    let modelo=req.body.Modelo
+    let modelo=req.body.Modelo;
     let precio= req.body.Precio;
     console.log(carro)
     console.log(modelo)
@@ -50,10 +50,8 @@ app.post('/borrarCarro', (req,res)=>{
     });
     
 });
-//
-//fun consultar
 
-
+//funcion consultar
 app.get('/obtenerCarro',(req,res)=>{
     
     con.query('select * from Carros', (err,respuesta, fields)=>{
@@ -67,12 +65,12 @@ app.get('/obtenerCarro',(req,res)=>{
                             <td>${carros.id}</td>
                             <td>${carros.nombre_coche}</td>
                             <td>${carros.modelo_coche}</td>
-                            <td>${carros.precio_coche}</td>  
+                            <td>${carros.precio_coche}</td> 
+                            <td><button>Actualizar</button</td>
+                            <td><input type="submit" value="Borrar"></td> 
                             
                             </tr>`;
             
-
-
         });
 
         return res.send(`<table border=1>
@@ -81,6 +79,8 @@ app.get('/obtenerCarro',(req,res)=>{
                     <th>Nombre</th>
                     <th>Modelo</th>
                     <th>Precio</th>
+                    <th>Actualizar</th>
+                    <th>Borrar</th>
                 <tr>
                 ${carrosHTML}
                 </table>
@@ -90,6 +90,11 @@ app.get('/obtenerCarro',(req,res)=>{
 
     });
 });
+
+//funcion para actualizar
+
+//funcion para borrar
+
 
 app.listen(3000,()=>{
 
